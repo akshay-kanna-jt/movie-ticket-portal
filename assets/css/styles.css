@@ -1,0 +1,300 @@
+/* styles.css - BookMyShow style adapted */
+
+/* Global */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f5f5f7;
+  color: #222;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+/* Navbar */
+.navbar-brand {
+  font-weight: 700;
+  color: #fff !important;
+}
+.navbar .form-select {
+  width: 170px;
+}
+
+/* Hero */
+.hero {
+  background: linear-gradient(90deg, rgba(0,0,0,0.55), rgba(0,0,0,0.3)), url('../images/placeholder.jpg') center/cover no-repeat;
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+}
+.hero-overlay .display-5 { color: #fff; }
+
+/* Movie cards grid (responsive) */
+#movieContainer { padding: 30px 4%; }
+#movieContainer .movie-card-col { display:flex; }
+
+.movie-card {
+  border-radius: 12px;
+  overflow: hidden;
+  width: 100%;
+  display:flex;
+  flex-direction: column;
+  background:#fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.movie-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(229, 9, 20, 0.2);
+}
+
+.movie-poster {
+  width:100%;
+  height:370px;
+  object-fit:cover;
+}
+.card-body {
+  padding: 12px 14px;
+}
+.card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.text-muted.small { font-size: 0.85rem; }
+
+/* Book button */
+.btn-primary {
+  background:#e50914;
+  border:none;
+}
+.btn-primary:hover { background:#b20710; }
+
+/* Loader */
+.loader { width:40px; height:40px; border:5px solid #eee; border-top:5px solid #e50914; border-radius:50%; animation:spin 1s linear infinite; margin:40px auto; }
+@keyframes spin { from {transform:rotate(0)} to {transform:rotate(360deg)} }
+
+/* Booking page movie details */
+.movie-details { display:flex; gap:18px; align-items:flex-start; margin-top:18px; background:#fff; padding:18px; border-radius:10px; box-shadow:0 4px 18px rgba(0,0,0,0.06); }
+.movie-details img { width:160px; height:240px; object-fit:cover; border-radius:8px; }
+
+/* Seat styles */
+.theater { background:#fff; padding:18px; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.06); }
+.seat-row { display:flex; justify-content:center; gap:10px; margin-bottom:12px; }
+.seat { width:40px; height:40px; display:inline-flex; align-items:center; justify-content:center; border-radius:8px; background:#e9e9e9; cursor:pointer; user-select:none; }
+.seat:hover { transform:scale(1.06); box-shadow:0 6px 12px rgba(0,0,0,0.06); }
+.seat.selected { background:#0926e5; color:#fff; box-shadow:0 6px 14px rgba(229,9,20,0.18); }
+.seat.occupied { background:#bc1111; cursor:not-allowed; opacity:0.6; }
+
+/* Confirmation card */
+.confirmation-card { background:#fff; padding:28px; border-radius:10px; box-shadow:0 8px 24px rgba(0,0,0,0.08); }
+
+/* Footer */
+footer { background:#111; color:#ddd; }
+
+/* Highlight animation for searched movie */
+.highlighted {
+  animation: glowFlash 2s ease;
+  border: 3px solid #ff0;
+  box-shadow: 0 0 30px rgba(229, 9, 20, 0.7);
+}
+
+@keyframes glowFlash {
+  0% { box-shadow: 0 0 5px #e50914; }
+  50% { box-shadow: 0 0 25px #ff0; }
+  100% { box-shadow: 0 0 5px #e50914; }
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .movie-poster { height:260px; }
+  .movie-details { flex-direction:column; align-items:center; text-align:center; }
+  .navbar .form-select { width:120px; }
+}
+@media (max-width: 480px) {
+  .movie-poster { height:200px; }
+  .seat { width:32px; height:32px; }
+}
+
+/* --- Carousel Styling --- */
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-image-container {
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+}
+
+.carousel-image {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  filter: brightness(70%);
+  transition: transform 4s ease-in-out;
+}
+
+.carousel-item.active .carousel-image {
+  transform: scale(1.05);
+}
+
+.carousel-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.7));
+}
+
+.carousel-caption {
+  bottom: 80px;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+  color: #fff;
+}
+
+.carousel-caption h3 {
+  font-size: 2rem;
+  color: #fff;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.carousel-caption p {
+  font-size: 1rem;
+  color: #ddd;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px #fff, 0 0 20px #ff00ff; }
+  to { text-shadow: 0 0 20px #ff0080, 0 0 40px #ff00ff; }
+}
+
+/* 🎬 HERO CAROUSEL - CINEMATIC DESIGN */
+.hero {
+  width: 100%;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+/* Carousel Container */
+#nowPlayingCarousel {
+  width: 75%;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0);
+}
+
+/* Image Styling */
+.carousel-item img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 16px;
+  transition: transform 0.6s ease-in-out;
+}
+.carousel-item img:hover {
+  transform: scale(1.03);
+}
+/* Text Below Carousel */
+.hero-overlay {
+  margin-top: 25px;
+  width: 85%;
+  max-width: 1200px;
+  text-align: center;
+  background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+  border-radius: 12px;
+  padding: 30px 20px;
+  box-shadow: 0 0 25px rgba(229, 9, 20, 0.4);
+}
+.hero-overlay h1 {
+  font-weight: 700;
+  font-size: 2rem;
+  color: #e50914;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+}
+.hero-overlay p {
+  color: #f5f5f5;
+  font-size: 1.05rem;
+  margin: 0;
+}
+/* Caption on Image Bottom (title + overview) */
+.carousel-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.1));
+  padding: 25px 30px 35px;
+  text-align: left;
+  border-radius: 0 0 16px 16px;
+}
+.carousel-caption h3 {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+.carousel-caption p {
+  color: #ddd;
+  font-size: 0.95rem;
+  margin: 0;
+  max-width: 80%;
+}
+/* Arrow Buttons */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 6%;
+  opacity: 1;
+  transition: transform 0.3s ease;
+}
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  transform: scale(1.1);
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0,0,0,0.7);
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  background-size: 65%;
+  transition: all 0.3s ease-in-out;
+}
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+  background-color: #e50914;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .carousel-item img {
+    height: 320px;
+  }
+  .carousel-caption h3 {
+    font-size: 1.2rem;
+  }
+  .carousel-caption p {
+    font-size: 0.85rem;
+    max-width: 100%;
+  }
+  .hero-overlay {
+    width: 95%;
+    padding: 20px 15px;
+  }
+}
+
+
+
+/*
+if (time.includes("10:00 AM")) price *= 1.0;
+      else if (time.includes("1:00 PM")) price *= 1.0;
+      else if (time.includes("4:00 PM")) price *= 1.0;
+      else if (time.includes("7:00 PM")) price *= 1.0;
+      else if (time.includes("10:00 PM")) price *= 1.0;
+*/

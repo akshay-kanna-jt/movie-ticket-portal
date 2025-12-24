@@ -1,0 +1,85 @@
+  <!doctype html>
+  <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>All Movies</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+  </head>
+  <body>
+    <!-- same navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">MovieTicketPortal</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav2">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="nav2">
+          <ul class="navbar-nav ms-auto align-items-center">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link active" href="movies.html">Movies</a></li>
+            <li class="nav-item"><a class="nav-link" href="booking.html">Booking</a></li>
+            <li class="nav-item ms-3">
+              <select id="locationSelect2" class="form-select form-select-sm"></select>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container my-5">
+      <h3>Currently Playing Movies</h3>
+      <!-- <div class="mb-3">
+        <input id="searchInputMovies" class="form-control" placeholder="Search movies..." />
+      </div> -->
+
+      <div id="movieContainerAll" class="row g-4">
+        <!-- movie cards -->
+      </div>
+    </main>
+
+    <footer class="bg-dark text-light py-3">
+      <div class="container text-center small">
+        © <span id="year2"></span> MovieTicketPortal
+      </div>
+    </footer>
+
+
+    <!-- Booking Modal -->
+  <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="bookingModalLabel">Book Your Ticket</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p><strong>Movie:</strong> <span id="selectedMovie"></span></p>
+
+          <div class="mb-3">
+            <label class="form-label">Select Date:</label>
+            <select id="bookingDate" class="form-select">
+              <!-- Dates will be added by JS -->
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Select Timing:</label>
+            <div id="timeSlots" class="d-flex flex-wrap gap-2">
+              <!-- Show timings will be added by JS -->
+            </div>
+          </div>
+
+          <button id="proceedSeatBtn" class="btn btn-primary w-100">Proceed to Seat Selection</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/scripts.js"></script>
+  </body>
+  </html>
